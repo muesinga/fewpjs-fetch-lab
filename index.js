@@ -1,5 +1,10 @@
-function fetchBooks() {
-
+function fetchBooks() { fetch('https://anapioficeandfire.com/api/books')
+.then(resp => resp.json())
+.then(booksArr => {
+  booksArr.forEach(booksObj => {
+    renderBooks(booksObj)
+  })
+})
 }
 
 function renderBooks(books) {
